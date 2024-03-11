@@ -13,8 +13,8 @@ from core.views import UserViewSet, CategoriaViewSet
 
 router = DefaultRouter()
 
-router.register(r"users", UserViewSet, basename="users")
-router.register(r"categoria", UserViewSet, basename="categorias")
+router.register(r"usuarios", UserViewSet, basename="users")
+router.register(r"categorias", CategoriaViewSet, basename="categorias")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,7 +25,7 @@ urlpatterns = [
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
     ),
-    path(
+    path( 
         "api/redoc/",
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
