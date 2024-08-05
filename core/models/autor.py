@@ -6,3 +6,6 @@ class Autor(models.Model):
 
     def __str__(self):
         return f"{self.nome} ({self.id})"
+class Meta:
+        verbose_name = "Autor"
+        verbose_name_plural = "Autores"

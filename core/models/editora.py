@@ -7,3 +7,6 @@ class Editora(models.Model):
 
     def __str__(self):
         return f"{self.nome} ({self.id})"
+class Meta:
+        verbose_name = "Editora"
+        verbose_name_plural = "Editoras"

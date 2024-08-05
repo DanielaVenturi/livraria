@@ -9,16 +9,18 @@ from drf_spectacular.views import (
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from core.views import CategoriaViewSet, EditoraViewSet, UserViewSet, AutorViewSet
+from core.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet,UserViewSet 
 
 router = DefaultRouter()
 
-router.register(r"usuarios", UserViewSet, basename="users")
+router.register(r"autor", AutorViewSet, basename="autor")
 router.register(r"categorias", CategoriaViewSet, basename="categorias")
 router.register(r"editoras", EditoraViewSet)
-router.register(r"autor", AutorViewSet, basename="autor")
+router.register(r"livros", LivroViewSet, basename="livros")
+router.register(r"usuarios", UserViewSet, basename="usuário")
 
 urlpatterns = [
+
     path("admin/", admin.site.urls),
     # OpenAPI 3
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),

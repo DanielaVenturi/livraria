@@ -6,3 +6,6 @@ class Categoria(models.Model):
 
     def __str__(self):
         return f"{self.descricao} ({self.id})"
+class Meta:
+        verbose_name = "Categororia"
+        verbose_name_plural = "Categorias"
