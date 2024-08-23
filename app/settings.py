@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "cloudinary_storage",
     "cloudinary",
     "corsheaders",
+    "uploader",
     "django_extensions",
     "django_filters",
     "drf_spectacular",
@@ -118,6 +119,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = "static/"
+MEDIA_ENDPOINT = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+FILE_UPLOAD_PERMISSIONS = 0o640
 
 if MODE in ["PRODUCTION", "MIGRATE"]:
     CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")

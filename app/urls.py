@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
-
+from uploader.router import router as uploader_router
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -34,6 +34,7 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
+     path("api/media/", include(uploader_router.urls)),
     # Simple JWT
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
