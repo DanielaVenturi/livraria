@@ -10,9 +10,9 @@ class ItensCompraSerializer(ModelSerializer):
 
     class Meta:
         model = ItensCompra
-        fields = ("livro", "quantidade", "total")
+        fields = ("id", "usuario", "status", "total", "itens")
         depth = 1
-        
+
 class CompraSerializer(ModelSerializer):
     class Meta:
         model = Compra
